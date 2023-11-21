@@ -1,38 +1,236 @@
-.App {
+* {
+  box-sizing: border-box;
+}
+
+div {
+  display: block;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background-color: #ffffff;
+  padding: 0 4.3%;
+  z-index: 999;
+}
+
+.body {
+  display: block;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  font-family: "Vectora LT Pro", sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+.section-head {
+  position: absolute;
+  background-color: #00aff5;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 20vw;
+  min-height: 80px;
+  max-height: 215px;
+}
+
+.section-container {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: 1.2rem;
+  padding-left: 1.2rem;
+}
+
+.section-titles {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  margin-top: 70px;
+}
+
+.section-title {
+  font-family: "Vectora LT Pro", sans-serif;
+  display: block;
+  font-size: 36px;
+  font-weight: 300;
+  color: white;
+  text-align: center;
+  margin: 5px;
+  line-height: 1;
+}
+
+.section-title:first-child {
+  margin-top: 35px;
+}
+.logo {
+  height: 67px;
+  width: auto;
+  margin-right: 5vw;
+  padding: 10px;
+}
+
+.body-container {
+  position: relative;
+  background-color: #ffffff;
+  border-radius: 3px;
+}
+
+form {
+  display: block;
+  margin-top: 0em;
+}
+
+.form-fields,
+.form-container {
+  margin-bottom: 80px;
+}
+
+.form-field {
+  margin-bottom: 10px;
+}
+.form-container {
+  max-width: 564px;
+  margin: 2.5vw auto;
+  background-color: #ffffff;
+  padding: 1px 20px;
+}
+
+.container {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: 1.2rem;
+  padding-left: 1.2rem;
+}
+
+main {
+  margin-top: 70px;
+  display: block;
+}
+
+label {
+  display: inline-block;
+  padding: 5px;
+  font-family: "Vectora LT Pro", sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  color: #938b8b;
+  margin-top: 10px;
+}
+
+input,
+select {
+  display: block;
+  width: 100%;
+  position: relative;
+  padding: 10px 12px;
+  margin: 0px;
+  border-radius: 3px;
+  border: solid 1px #e0e0e0;
+  color: #bcbcbc;
+  background-color: #ffffff;
+}
+
+#dateOfBirth::placeholder {
+  color: #bcbcbc;
+}
+
+.addNext {
+  text-align: center;
+  margin: 0;
+}
+
+.add-person-btn {
+  background-color: #00aff5;
+  color: #ffffff;
+  font-family: "Vectora LT Pro", sans-serif;
+  font-size: 14px;
+  border: 1px solid transparent;
+  border-radius: 65px;
+  padding: 12px 24px;
+}
+
+.textAccept {
+  font-size: 16px;
+  font-family: "Vectora LT Pro-Roman";
+  color: #bcbcbc;
+}
+
+a {
+  color: #00aff5;
+}
+
+input[type="checkbox"] {
+  display: inline-block;
+  width: auto;
+  box-sizing: border-box;
+  border: solid 1px #e0e0e0;
+  color: #bcbcbc;
+  background-color: #ffffff;
+}
+
+.checkbox-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.check-in-btn {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  text-align: center;
 }
 
-.App-link {
-  color: #61dafb;
+.submit-btn {
+  background-color: #70bb3f;
+  color: #ffffff;
+  font-family: "Vectora LT Pro", sans-serif;
+  font-size: 16px;
+  border: 1px solid transparent;
+  border-radius: 65px;
+  padding: 9px 24px;
+  max-width: 200px;
+  width: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.english-img,
+.italian-img,
+.german-img {
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+  float: right;
+}
+@media (min-width: 1200px) {
+  .body-container {
+    padding-top: 20px;
+    margin-top: -50px;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media (min-width: 1600px) {
+  .container {
+    width: 1620px;
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 576px) {
+  .form-container {
+    padding: 80px;
   }
 }
