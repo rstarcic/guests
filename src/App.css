@@ -215,6 +215,7 @@ input[type="checkbox"] {
   margin-right: 10px;
   float: right;
 }
+
 @media (min-width: 1200px) {
   .body-container {
     padding-top: 20px;

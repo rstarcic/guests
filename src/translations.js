@@ -1,7 +1,7 @@
 // translations.js
 const translations = {
   en: {
-    firstPerson: "Person 1",
+    firstPerson: "Person ",
     firstName: "First Name / Ime",
     lastName: "Last Name / Prezime",
     gender: "Gender / Spol",
@@ -13,6 +13,7 @@ const translations = {
     documentType: "Document type / Vrsta isprave",
     documentNumber: "Document number / Broj isprave",
     addNextPersonButton: "ADD NEXT PERSON",
+    removePersonButton: "REMOVE PERSON",
     textAccept: "I accept the",
     gdprLink: "https://mvisitor.hr/tz/gdpr/GDPR_EN.pdf",
     privacyPolicyLink: "https://intersoft.uno/izjava-o-privatnosti.html",
@@ -20,7 +21,7 @@ const translations = {
     privacyPolicyText: "privacy policy",
   },
   de: {
-    firstPerson: "Person 1",
+    firstPerson: "Person ",
     firstName: "Vorname / Ime",
     lastName: "Nachname / Prezime",
     gender: "Geschlecht / Spol",
@@ -32,15 +33,16 @@ const translations = {
     documentType: "Dokumentenart / Vrsta isprave",
     documentNumber: "Dokumentennummer / Broj isprave",
     addNextPersonButton: "NÄCHSTE PERSON HINZUFÜGEN",
+    removePersonButton: "PERSON ENTFERNEN",
     submit: "Einchecken",
     textAccept: "Ich akzeptiere die",
     gdprLink: "https://mvisitor.hr/tz/gdpr/GDPR_EN.pdf",
     privacyPolicyLink: "https://intersoft.uno/izjava-o-privatnosti.html",
     gdprText: "DSGVO",
-    privacyPolicyText: "Datenschutzrichtlinie",
+    privacyPolicyText: "datenschutzrichtlinie",
   },
   it: {
-    firstPerson: "Persona 1",
+    firstPerson: "Persona ",
     firstName: "Nome / Ime",
     lastName: "Cognome / Prezime",
     gender: "Genere / Spol",
@@ -52,6 +54,7 @@ const translations = {
     documentType: "Tipo di documento / Vrsta isprave",
     documentNumber: "Numero del documento / Broj isprave",
     addNextPersonButton: "AGGIUNGI PROSSIMA PERSONA",
+    removePersonButton: "RIMUOVERE LA PERSONA",
     submit: "Check-in",
     textAccept: "Accetto la",
     gdprLink: "https://mvisitor.hr/tz/gdpr/GDPR_EN.pdf", 
