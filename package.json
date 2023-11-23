@@ -1,5 +1,6 @@
 {
   "name": "guests",
+  "homepage": "https://mvisitor.hr/test/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

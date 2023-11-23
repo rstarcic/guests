@@ -8,7 +8,7 @@ const translations = {
     dateOfBirth: "Date of birth / Godina rođenja",
     citizenship: "Citizenship / Državljanstvo",
     birthCountry: "Country of birth / Država rođenja ",
-    countryResidence: "Country of residenceh / Država prebivališta",
+    countryResidence: "Country of residence / Država prebivališta",
     residencePlace: "Place of residence / Mjesto prebivališta",
     documentType: "Document type / Vrsta isprave",
     documentNumber: "Document number / Broj isprave",

@@ -111,15 +111,9 @@ function Form({ language, setLanguage }) {
       const updatedFormData = [...prevFormData];
       updatedFormData[index] = {
         ...updatedFormData[index],
-        citizenship: citizenshipValue,
-        birthCountry:
-          citizenshipValue === "Croatia"
-            ? "Croatia"
-            : updatedFormData[index].birthCountry,
-        countryResidence:
-          citizenshipValue === "Croatia"
-            ? "Croatia"
-            : updatedFormData[index].countryResidence,
+        citizenship: citizenshipValue === "Croatia" ? "Croatia" : citizenshipValue,
+        birthCountry: citizenshipValue === "Croatia" ? "Croatia" : citizenshipValue,
+        countryResidence: citizenshipValue === "Croatia" ? "Croatia" : citizenshipValue,
       };
       return updatedFormData;
     });
@@ -196,18 +190,18 @@ function Form({ language, setLanguage }) {
 
   const [triedToSubmit, setTriedToSubmit] = useState(false);
   const validateForm = () => {
-    for (const person of persons) {
+    for (const data of formData) {
       if (
-        !person.firstName ||
-        !person.lastName ||
-        !person.gender ||
-        !person.dateOfBirth ||
-        !person.citizenship ||
-        !person.birthCountry ||
-        !person.countryResidence ||
-        !person.residencePlace ||
-        !person.documentType ||
-        !person.documentNumber
+        !data.firstName ||
+        !data.lastName ||
+        !data.gender ||
+        !data.dateOfBirth ||
+        !data.citizenship ||
+        !data.birthCountry ||
+        !data.countryResidence ||
+        !data.residencePlace ||
+        !data.documentType ||
+        !data.documentNumber
       ) {
         alert("Please, enter all required information.");
         setTriedToSubmit(true);
@@ -215,7 +209,7 @@ function Form({ language, setLanguage }) {
       }
 
       const datePattern = /^\d{2}\.\d{2}\.\d{4}$/;
-      if (!datePattern.test(person.dateOfBirth)) {
+      if (!datePattern.test(data.dateOfBirth)) {
         alert("Please enter a valid date in the format dd.MM.yyyy");
         return false;
       }
@@ -295,19 +289,22 @@ function Form({ language, setLanguage }) {
           src="/images/german.png"
           alt="german"
           className="german-img"
-          onClick={() => changeLanguage("de")}
+          onClick={ () => changeLanguage("de") }
+          key="german"
         ></img>
         <img
           src="./images/italian.png"
           alt="italian"
           className="italian-img"
-          onClick={() => changeLanguage("it")}
+          onClick={ () => changeLanguage("it") }
+          key="italian"
         ></img>
         <img
           src="/images/english.png"
           alt="english"
           className="english-img"
-          onClick={() => changeLanguage("en")}
+          onClick={ () => changeLanguage("en") }
+          key="english"
         ></img>
       </div>
       <div className="main-container">
@@ -335,9 +332,9 @@ function Form({ language, setLanguage }) {
                     id={`firstName-${index}`}
                     name="firstName"
                     maxLength={100}
-                    value={person.firstName}
+                    value={formData[index].firstName}
                     onChange={(e) => handleFirstNameChange(index, e)}
-                    style={getValidationStyle(person.firstName)}
+                    style={getValidationStyle(formData[index].firstName)}
                   />
                   <br />
                 </div>
@@ -351,9 +348,9 @@ function Form({ language, setLanguage }) {
                     id="lastName"
                     name="lastName"
                     maxLength={100}
-                    value={person.lastName}
+                    value={formData[index].lastName}
                     onChange={(e) => handleLastNameChange(index, e)}
-                    style={getValidationStyle(person.lastName)}
+                    style={getValidationStyle(formData[index].lastName)}
                   />
                   <br />
                 </div>
@@ -365,7 +362,7 @@ function Form({ language, setLanguage }) {
                   <select
                     name="gender"
                     id="gender"
-                    value={person.gender}
+                    value={formData[index].gender}
                     onChange={(e) => handleGenderChange(index, e)}
                   >
                     <option value="male">Male</option>
@@ -383,9 +380,10 @@ function Form({ language, setLanguage }) {
                     id="dateOfBirth"
                     name="dateOfBirth"
                     placeholder="dd.MM.yyyy"
-                    value={person.dateOfBirth}
+                    value={formData[index].dateOfBirth}
                     onChange={(e) => handleDateOfBirthChange(index, e)}
-                    maxLength={10}
+                    maxLength={ 10 }
+                    style={getValidationStyle(formData[index].dateOfBirth)}
                   />
                   <br />
                 </div>
@@ -400,8 +398,9 @@ function Form({ language, setLanguage }) {
                     id="citizenship"
                     name="citizenship"
                     list="countries"
-                    value={person.citizenship}
-                    onChange={(e) => handleCitizenshipChange(index, e)}
+                    value={formData[index].citizenship}
+                    onChange={ (e) => handleCitizenshipChange(index, e) }
+                    style={getValidationStyle(formData[index].citizenship)}
                   />
                   <br />
                   <datalist id="countries">
@@ -687,8 +686,9 @@ function Form({ language, setLanguage }) {
                     type="text"
                     id="birthCountry"
                     list="countries"
-                    value={person.birthCountry}
+                    value={formData[index].birthCountry}
                     onChange={(e) => handleBirthCountryChange(index, e)}
+                    style={getValidationStyle(formData[index].birthCountry)}
                   />
                   <br />
                 </div>
@@ -702,8 +702,9 @@ function Form({ language, setLanguage }) {
                     type="text"
                     id="countryResidence"
                     list="countries"
-                    value={person.countryResidence}
-                    onChange={(e) => handleCountryResidenceChange(index, e)}
+                    value={formData[index].countryResidence}
+                    onChange={ (e) => handleCountryResidenceChange(index, e) }
+                    style={getValidationStyle(formData[index].countryResidence)}
                   />
                   <br />
                 </div>
@@ -717,7 +718,7 @@ function Form({ language, setLanguage }) {
                     type="text"
                     id="residencePlace"
                     maxLength={50}
-                    value={person.residencePlace}
+                    value={formData[index].residencePlace}
                     onChange={(e) => handleResidencePlaceChange(index, e)}
                     list={showCities ? "cities" : ""}
                   />
@@ -733,7 +734,7 @@ function Form({ language, setLanguage }) {
                   <select
                     name="documentType"
                     id="documentType"
-                    value={person.documentType}
+                    value={formData[index].documentType}
                     onChange={(e) => handleDocumentTypeChange(index, e)}
                   >
                     <option value="ID">ID</option>
@@ -753,9 +754,9 @@ function Form({ language, setLanguage }) {
                     type="text"
                     id="documentNumber"
                     maxLength={16}
-                    value={person.documentNumber}
+                    value={formData[index].documentNumber}
                     onChange={(e) => handleDocumentNumberChange(index, e)}
-                    style={getValidationStyle(person.documentNumber)}
+                    style={getValidationStyle(formData[index].documentNumber)}
                   />
                   <br />
                 </div>
