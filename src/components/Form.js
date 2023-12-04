@@ -286,7 +286,7 @@ function Form({ language, setLanguage }) {
     <div className="container body-container">
       <div className="select-language">
         <img
-          src="/images/german.png"
+          src="./images/german.png"
           alt="german"
           className="german-img"
           onClick={ () => changeLanguage("de") }
@@ -300,7 +300,7 @@ function Form({ language, setLanguage }) {
           key="italian"
         ></img>
         <img
-          src="/images/english.png"
+          src="./images/english.png"
           alt="english"
           className="english-img"
           onClick={ () => changeLanguage("en") }
