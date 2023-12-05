@@ -283,10 +283,10 @@ function Form({ language, setLanguage }) {
   };
 
   return (
-    <div className="container body-container">
+    <div className="container body-container" style={{marginBottom:"100x"}}>
       <div className="select-language">
         <img
-          src="/images/german.png"
+          src="./images/german.png"
           alt="german"
           className="german-img"
           onClick={ () => changeLanguage("de") }
@@ -300,7 +300,7 @@ function Form({ language, setLanguage }) {
           key="italian"
         ></img>
         <img
-          src="/images/english.png"
+          src="./images/english.png"
           alt="english"
           className="english-img"
           onClick={ () => changeLanguage("en") }
@@ -309,7 +309,7 @@ function Form({ language, setLanguage }) {
       </div>
       <div className="main-container">
         {persons.map((person, index) => (
-          <div className="form-container" key={person.id}>
+          <div className="form-container" key={person.id} style ={{ height:"1205px"}}>
             <form method="POST" onSubmit={handleSubmit}>
               <div className="form-fields" key={person.id}>
                 <div className="form-field">

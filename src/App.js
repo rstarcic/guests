@@ -4,11 +4,13 @@ import TitleSection from "./components/TitleSection";
 import Form from "./components/Form";
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import { LanguageProvider } from "./components/Language.js"; 
 
 function App() {
   const [language, setLanguage] = useState("en");
   return (
-    <Router>
+    <Router basename="/roberta/guests/build">
+       <LanguageProvider> 
       <div className="App">
         <Header />
         <TitleSection />
@@ -18,7 +20,8 @@ function App() {
           {<Route path="/de" element={<Form language={language} setLanguage={setLanguage} />} /> }
           {<Route path="/it" element={<Form language={language} setLanguage={setLanguage} />} /> }
         </Routes>
-      </div>
+        </div>
+        </LanguageProvider>
     </Router>
   );
 }

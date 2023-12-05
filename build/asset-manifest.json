@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/roberta/guests/build/static/css/main.981bda1b.css",
+    "main.js": "/roberta/guests/build/static/js/main.d2145903.js",
+    "static/js/787.837b9e84.chunk.js": "/roberta/guests/build/static/js/787.837b9e84.chunk.js",
+    "index.html": "/roberta/guests/build/index.html",
+    "main.981bda1b.css.map": "/roberta/guests/build/static/css/main.981bda1b.css.map",
+    "main.d2145903.js.map": "/roberta/guests/build/static/js/main.d2145903.js.map",
+    "787.837b9e84.chunk.js.map": "/roberta/guests/build/static/js/787.837b9e84.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.981bda1b.css",
+    "static/js/main.d2145903.js"
+  ]
+}
