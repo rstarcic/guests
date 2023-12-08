@@ -1,18 +1,10 @@
-import React, { useEffect } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import React from 'react';
+import { useLocation } from 'react-router-dom';
 
 function TitleSection() {
-    const [searchParams] = useSearchParams();
-    const q = searchParams.get('q');
-    const { language, queryParam, changeLanguage, updateQueryParam } = useLanguage();
-
-    useEffect(() => {
-        const queryParams = new URLSearchParams(window.location.search);
-        queryParams.set('q', queryParam);
-    
-        window.history.replaceState({}, '', `${window.location.pathname}?${queryParams}`);
-      }, [queryParam]);
-    
+    const location = useLocation();
+    const queryParams = new URLSearchParams(location.search);
+    const q = queryParams.get('q');
     return (
     < div className = "section-head" >
         <div className="section-container">
