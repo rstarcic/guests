@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation} from "react-router-dom";
 
 import citiesOfCroatia from "../citiesOfCroatia.json";
 import translations from "../translations";
@@ -21,7 +21,6 @@ function Form({ language, setLanguage }) {
       documentNumber: "",
     },
   ]);
-  const navigate = useNavigate();
 
   const addPerson = () => ({
     firstName: "",
@@ -258,12 +257,6 @@ function Form({ language, setLanguage }) {
       borderColor: triedToSubmit && !value ? "red" : "initial",
     };
   };
-
-  const changeLanguage = (lang) => {
-    setLanguage(lang);
-    navigate(`/${lang}`);
-  };
-
   const handleAddPerson = (e) => {
     e.preventDefault();
     if (persons.length < 10) {
@@ -281,7 +274,14 @@ function Form({ language, setLanguage }) {
       setFormData((prevFormData) => prevFormData.slice(0, -1));
     }
   };
+  const navigate = useNavigate();
+  const location = useLocation();
+  const q = location.search;
 
+  const changeLanguage = (lang) => {
+    setLanguage(lang);
+    navigate(`/${lang}${q}`);
+  };
   return (
     <div className="container body-container" style={{marginBottom:"100x"}}>
       <div className="select-language">
